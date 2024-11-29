@@ -3,7 +3,23 @@
  * @returns { Promise<void> }
  */
 export function up(knex) {
-    return knex.schema
+    return knex.schema.createTable("bid", (table) => {
+        table.increments("id").primary();
+        table
+            .integer("auction_id")
+            .unsigned()
+            .references("auction.id")
+            .onUpdate("CASCADE")
+            .onDelete("CASCADE");
+        table
+            .integer("user_id")
+            .unsigned()
+            .references("user.id")
+            .onUpdate("CASCADE")
+            .onDelete("CASCADE");
+        table.integer("amount").notNullable();
+        table.timestamp("created_at").defaultTo(knex.fn.now());
+    });
 };
 
 /**
@@ -11,5 +27,5 @@ export function up(knex) {
  * @returns { Promise<void> }
  */
 export function down(knex) {
-    return knex.schema
+    return knex.schema.dropTable("bid")
 };

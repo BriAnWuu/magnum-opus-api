@@ -66,7 +66,7 @@ Provide visuals of your app's screens. You can use pictures of hand-drawn sketch
 
 ### Data
 
-![](./public/readme-assets/db-diagram.png)
+![](./readme-assets/db-diagram.png)
 
 ### Endpoints
 

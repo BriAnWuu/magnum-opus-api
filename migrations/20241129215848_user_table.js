@@ -3,7 +3,13 @@
  * @returns { Promise<void> }
  */
 export function up(knex) {
-    return knex.schema
+    return knex.schema.createTable("user", (table) => {
+        table.increments("id").primary();
+        table.boolean("buyer").notNullable();
+        table.boolean("seller").notNullable();
+        table.boolean("artist").notNullable();
+        table.timestamp("created_at").defaultTo(knex.fn.now());
+    });
 };
 
 /**

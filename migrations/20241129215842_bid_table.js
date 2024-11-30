@@ -17,7 +17,7 @@ export function up(knex) {
             .references("user.id")
             .onUpdate("CASCADE")
             .onDelete("CASCADE");
-        table.integer("amount").notNullable();
+        table.integer("amount").unsigned().notNullable();
         table.timestamp("created_at").defaultTo(knex.fn.now());
     });
 };

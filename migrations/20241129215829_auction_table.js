@@ -19,8 +19,8 @@ export function up(knex) {
             .onDelete("CASCADE");
         table.timestamp("open_at").notNullable();
         table.timestamp("close_at").notNullable();
-        table.integer("ask_price").notNullable();
-        table.integer("leading_bid_price").notNullable;
+        table.integer("ask_price").unsigned().notNullable();
+        table.integer("leading_bid_price").unsigned().notNullable;
         table.timestamp('created_at').defaultTo(knex.fn.now());
     });
 };

@@ -23,7 +23,7 @@ export function up(knex) {
             .unsigned()
             .references("user.id")
             .onUpdate("CASCADE")
-            .onDelete("CASCADE");
+            .onDelete("RESTRICT");
         table.timestamp("open_at").notNullable();
         table.timestamp("close_at").notNullable();
         table.integer("ask_price").unsigned().notNullable();
@@ -37,13 +37,13 @@ export function up(knex) {
             .unsigned()
             .references("auction.id")
             .onUpdate("CASCADE")
-            .onDelete("CASCADE");
+            .onDelete("RESTRICT");
         table
             .integer("user_id")
             .unsigned()
             .references("user.id")
             .onUpdate("CASCADE")
-            .onDelete("CASCADE");
+            .onDelete("RESTRICT");
         table.integer("amount").unsigned().notNullable();
         table.timestamp("created_at").defaultTo(knex.fn.now());
     });

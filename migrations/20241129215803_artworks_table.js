@@ -13,6 +13,9 @@ export function up(knex) {
         table.string("description");
         table.string("dimensions");
         table.string("medium_display");
+        table.string("credit_line");
+        table.string("provenance_text");
+        table.string("artwork_type_title");
         table.integer("artist_id").unsigned();
         table.string("artist_title");
         table.string("term_titles");

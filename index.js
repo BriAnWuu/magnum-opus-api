@@ -21,6 +21,12 @@ app.use(express.static('public'));
 //     res.status(200).json(data);
 // })
 
+app.use("/api/artworks", artworksRoutes);
+app.use("/api/auction", auctionRoutes);
+app.use("/api/bid", bidRoutes);
+app.use("/api/user", userRoutes);
+
+
 app.listen(PORT, () => {
     console.log(`Running Magnum Opus API on http://localhost:${PORT}...`);
 });

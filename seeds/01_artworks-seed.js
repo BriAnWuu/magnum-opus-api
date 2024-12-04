@@ -21,11 +21,7 @@ export async function seed(knex) {
       "artwork_type_title": "Arms",
       "artist_id": 66563,
       "artist_title": "Wolf Paller",
-      "term_titles": [
-        "edged weapon-dagger",
-        "arms",
-        "arms and armor"
-      ],
+      "term_titles": "[\"edged weapon-dagger\",\"arms\",\"arms and armor\"]",
       "image_id": "aad9ef5d-5d5b-1ab9-fd89-d44677de5c7b",
       "alt_text": "A work made of steel, silver, wood, and leather."
     },
@@ -44,11 +40,7 @@ export async function seed(knex) {
       "artwork_type_title": "Arms",
       "artist_id": 80651,
       "artist_title": "Wolf Jung",
-      "term_titles": [
-        "firearm-handgun",
-        "arms",
-        "arms and armor"
-      ],
+      "term_titles": "[\"firearm-handgun\",\"arms\",\"arms and armor\"]",
       "image_id": "a70b104d-50a2-2563-f7f8-bc21ce7679f0",
       "alt_text": "A work made of steel, brass, and cherrywood."
     },
@@ -67,11 +59,7 @@ export async function seed(knex) {
       "artwork_type_title": "Textile",
       "artist_id": null,
       "artist_title": null,
-      "term_titles": [
-        "weaving - tapestry",
-        "wool (textile)",
-        "textile"
-      ],
+      "term_titles": "[\"weaving - tapestry\",\"wool (textile)\",\"textile\"]",
       "image_id": "cd0f60d9-2f55-d570-ba9b-fc74f31b0ef3",
       "alt_text": "A work made of wool and silk, slit and double interlocking tapestry weave.\nwarp: count: 5 warps per cm; wool: s-ply of three z-spun elements; diameters: 0.9–1.2 mm\nweft: count: varies from 11 to 34 wefts per cm; wool: s-ply of two, three, and four z-spun elements; diameters: 0.7–1.7 mm; silk: pairs of s-ply of two z-twisted elements; diameters: 0.7–1.2 mm."
     },
@@ -90,36 +78,7 @@ export async function seed(knex) {
       "artwork_type_title": "Painting",
       "artist_id": 33753,
       "artist_title": "Jules Breton",
-      "term_titles": [
-        "oil on canvas",
-        "oil paint (paint)",
-        "oil painting",
-        "19th century",
-        "woman",
-        "sky",
-        "horizon",
-        "landscape",
-        "rural life",
-        "french",
-        "oil paintings (visual works)",
-        "paint",
-        "canvas",
-        "paint",
-        "painting",
-        "painting",
-        "painting (image making)",
-        "painting techniques",
-        "bird",
-        "farm",
-        "field",
-        "girl",
-        "labor",
-        "peasants",
-        "sun",
-        "sunrises",
-        "painting",
-        "european painting"
-      ],
+      "term_titles": "[\"oil on canvas\",\"oil paint (paint)\",\"oil painting\",\"19th century\",\"woman\",\"sky\",\"horizon\",\"landscape\",\"rural life\",\"french\",\"oil paintings (visual works)\",\"paint\",\"canvas\",\"paint\",\"painting\",\"painting\",\"painting (image making)\",\"painting techniques\",\"bird\",\"farm\",\"field\",\"girl\",\"labor\",\"peasants\",\"sun\",\"sunrises\",\"painting\",\"european painting\"]",
       "image_id": "48b2de88-ba73-8e19-f448-d1cef4a1c847",
       "alt_text": "A work made of oil on canvas."
     },
@@ -138,11 +97,7 @@ export async function seed(knex) {
       "artwork_type_title": "Print",
       "artist_id": 31492,
       "artist_title": "Katsushika Hokusai",
-      "term_titles": [
-        "woodblock print",
-        "print",
-        "asian art"
-      ],
+      "term_titles": "[\"woodblock print\",\"print\",\"asian art\"]",
       "image_id": "98ddc3c7-d0f2-92bb-2d71-e8589f7608a6",
       "alt_text": "A work made of color woodblock print; long surimono."
     },
@@ -161,12 +116,7 @@ export async function seed(knex) {
       "artwork_type_title": "Print",
       "artist_id": 34946,
       "artist_title": "Utagawa Hiroshige",
-      "term_titles": [
-        "woodblock print",
-        "Japanese (culture or style)",
-        "print",
-        "asian art"
-      ],
+      "term_titles": "[\"woodblock print\",\"Japanese (culture or style)\",\"print\",\"asian art\"]",
       "image_id": "6b072cd6-4b7d-c91f-3ad4-6ad877944ed3",
       "alt_text": "A work made of color woodblock print; uchiwa-e."
     },
@@ -185,11 +135,7 @@ export async function seed(knex) {
       "artwork_type_title": "Print",
       "artist_id": 110896,
       "artist_title": "James Falconer",
-      "term_titles": [
-        "print",
-        "paper (fiber product)",
-        "prints and drawing"
-      ],
+      "term_titles": "[\"print\",\"paper (fiber product)\",\"prints and drawing\"]",
       "image_id": "eb41889f-06fa-c5e0-442a-fe3efa3da66e",
       "alt_text": "A work made of color screenprint on white paper."
     },
@@ -208,10 +154,7 @@ export async function seed(knex) {
       "artwork_type_title": "Photograph",
       "artist_id": 36244,
       "artist_title": "Eliot Porter",
-      "term_titles": [
-        "photograph",
-        "photography"
-      ],
+      "term_titles": "[\"photograph\",\"photography\"]",
       "image_id": "4acae0e3-4342-0b2d-171e-72eb555726a8",
       "alt_text": "A work made of dye imbibition print, from the portfolio \"portfolio ii iceland\" (1975)."
     },
@@ -230,18 +173,7 @@ export async function seed(knex) {
       "artwork_type_title": "Photograph",
       "artist_id": 33354,
       "artist_title": "Ansel Adams",
-      "term_titles": [
-        "gelatin silver (developing-out-paper) pr",
-        "photographic paper",
-        "Collected by Hugh Edwards",
-        "black-and-white photography",
-        "photographic process",
-        "photography",
-        "photograph",
-        "photographic processes",
-        "photographic techniques",
-        "photography"
-      ],
+      "term_titles": "[\"gelatin silver (developing-out-paper) pr\",\"photographic paper\",\"Collected by Hugh Edwards\",\"black-and-white photography\",\"photographic process\",\"photography\",\"photograph\",\"photographic processes\",\"photographic techniques\",\"photography\"]",
       "image_id": "0b5c239b-f89d-45f1-92b5-3cff416d51c7",
       "alt_text": "A work made of gelatin silver print, from the portfolio \"parmelian prints of the high sierras\" (1927)."
     },
@@ -260,18 +192,7 @@ export async function seed(knex) {
       "artwork_type_title": "Photograph",
       "artist_id": 33354,
       "artist_title": "Ansel Adams",
-      "term_titles": [
-        "gelatin silver (developing-out-paper) pr",
-        "photographic paper",
-        "Collected by Hugh Edwards",
-        "black-and-white photography",
-        "photographic process",
-        "photography",
-        "photograph",
-        "photographic processes",
-        "photographic techniques",
-        "photography"
-      ],
+      "term_titles": "[\"gelatin silver (developing-out-paper) pr\",\"photographic paper\",\"Collected by Hugh Edwards\",\"black-and-white photography\",\"photographic process\",\"photography\",\"photograph\",\"photographic processes\",\"photographic techniques\",\"photography\"]",
       "image_id": "318c0462-d30f-10f1-e04d-ac92ec39be1d",
       "alt_text": "A work made of gelatin silver print, no. 6 from \"portfolio three: yosemite valley\" (1959)."
     },
@@ -290,23 +211,7 @@ export async function seed(knex) {
       "artwork_type_title": "Sculpture",
       "artist_id": 37541,
       "artist_title": "Ancient Egyptian",
-      "term_titles": [
-        "ptolemaic",
-        "basalt (basic igneous rock)",
-        "gods (deities)",
-        "statue",
-        "carving",
-        "animals",
-        "stone",
-        "ancient art",
-        "sculpture",
-        "statuette",
-        "ancient",
-        "falcons",
-        "egyptian",
-        "stone",
-        "birds"
-      ],
+      "term_titles": "[\"ptolemaic\",\"basalt (basic igneous rock)\",\"gods (deities)\",\"statue\",\"carving\",\"animals\",\"stone\",\"ancient art\",\"sculpture\",\"statuette\",\"ancient\",\"falcons\",\"egyptian\",\"stone\",\"birds\"]",
       "image_id": "6a766b86-824d-239b-e3b8-eea48af968ee",
       "alt_text": "A work made of basalt."
     },
@@ -325,10 +230,7 @@ export async function seed(knex) {
       "artwork_type_title": "Painting",
       "artist_id": 60445,
       "artist_title": "Jane Wilson",
-      "term_titles": [
-        "painting",
-        "21st Century"
-      ],
+      "term_titles": "[\"painting\",\"21st Century\"]",
       "image_id": "4690a926-8782-d904-27ee-e38b400f7c87",
       "alt_text": "Abstract painting in vivid hues evoking a land- or seascape, featuring a large blue sky mottled by yellow and gold whispy clouds."
     },
@@ -347,23 +249,7 @@ export async function seed(knex) {
       "artwork_type_title": "Costume and Accessories",
       "artist_id": 30073,
       "artist_title": "Chavín",
-      "term_titles": [
-        "bead",
-        "crystal (material by form)",
-        "chavín horizon",
-        "jewelry",
-        "early horizon",
-        "Pre-Columbian",
-        "americas",
-        "art of the americas",
-        "jewelry",
-        "elite",
-        "andes",
-        "costume",
-        "Arts of the Americas",
-        "andean",
-        "status"
-      ],
+      "term_titles": "[\"bead\",\"crystal (material by form)\",\"chavín horizon\",\"jewelry\",\"early horizon\",\"Pre-Columbian\",\"americas\",\"art of the americas\",\"jewelry\",\"elite\",\"andes\",\"costume\",\"Arts of the Americas\",\"andean\",\"status\"]",
       "image_id": "3a9d26e0-4016-b6fc-2059-48560dce7ddc",
       "alt_text": "A work made of rock crystal."
     },
@@ -382,32 +268,7 @@ export async function seed(knex) {
       "artwork_type_title": "Painting",
       "artist_id": 36253,
       "artist_title": "Paulus Potter",
-      "term_titles": [
-        "oil on panel",
-        "oil paint (paint)",
-        "oil painting",
-        "cows",
-        "Realism",
-        "animals",
-        "paint",
-        "organic material",
-        "paint",
-        "painting",
-        "panel (wood)",
-        "painting",
-        "painting (image making)",
-        "painting techniques",
-        "panel painting",
-        "17th Century",
-        "clouds",
-        "fences",
-        "landscape",
-        "sky",
-        "trees",
-        "painting",
-        "european painting",
-        "Naturalism"
-      ],
+      "term_titles": "[\"oil on panel\",\"oil paint (paint)\",\"oil painting\",\"cows\",\"Realism\",\"animals\",\"paint\",\"organic material\",\"paint\",\"painting\",\"panel (wood)\",\"painting\",\"painting (image making)\",\"painting techniques\",\"panel painting\",\"17th Century\",\"clouds\",\"fences\",\"landscape\",\"sky\",\"trees\",\"painting\",\"european painting\",\"Naturalism\"]",
       "image_id": "5de78980-17d7-8fb5-83de-7b2ae4e997f2",
       "alt_text": "A tired-looking brown and white cow lies down on a patch of dry earth, a dark-brown bull and cow standing behind her against an overcast sky."
     },
@@ -426,15 +287,7 @@ export async function seed(knex) {
       "artwork_type_title": "Sculpture",
       "artist_id": 8766,
       "artist_title": "James Earle Fraser",
-      "term_titles": [
-        "bronze",
-        "sculpture",
-        "Chicago",
-        "american arts",
-        "animals",
-        "people",
-        "portraits"
-      ],
+      "term_titles": "[\"bronze\",\"sculpture\",\"Chicago\",\"american arts\",\"animals\",\"people\",\"portraits\"]",
       "image_id": "e5441c64-1b7a-d4b6-ed29-293e164e4f0b",
       "alt_text": "A work made of bronze."
     },
@@ -453,15 +306,7 @@ export async function seed(knex) {
       "artwork_type_title": "Sculpture",
       "artist_id": 32516,
       "artist_title": "Alexander Phimister Proctor",
-      "term_titles": [
-        "bronze",
-        "sculpture",
-        "Chicago",
-        "american arts",
-        "animals",
-        "people",
-        "portraits"
-      ],
+      "term_titles": "[\"bronze\",\"sculpture\",\"Chicago\",\"american arts\",\"animals\",\"people\",\"portraits\"]",
       "image_id": "ad61f134-f065-557d-bff3-60e3ef135c2e",
       "alt_text": "A work made of bronze."
     },
@@ -480,19 +325,7 @@ export async function seed(knex) {
       "artwork_type_title": "Textile",
       "artist_id": 20363,
       "artist_title": "Paracas",
-      "term_titles": [
-        "ocucaje",
-        "cotton (fiber)",
-        "textile",
-        "weaving - printed",
-        "paracas",
-        "early horizon",
-        "Pre-Columbian",
-        "peruvian",
-        "andean",
-        "andes",
-        "super/natural"
-      ],
+      "term_titles": "[\"ocucaje\",\"cotton (fiber)\",\"textile\",\"weaving - printed\",\"paracas\",\"early horizon\",\"Pre-Columbian\",\"peruvian\",\"andean\",\"andes\",\"super/natural\"]",
       "image_id": "e6c5ebc4-7c7d-a80f-4c4c-1f610ae076b6",
       "alt_text": "A work made of cotton, plain weave with bundles of extended warps; painted."
     },
@@ -511,12 +344,7 @@ export async function seed(knex) {
       "artwork_type_title": "Print",
       "artist_id": 37392,
       "artist_title": "Yoshida Chizuko",
-      "term_titles": [
-        "woodblock print",
-        "landscapes",
-        "Japanese (culture or style)",
-        "print"
-      ],
+      "term_titles": "[\"woodblock print\",\"landscapes\",\"Japanese (culture or style)\",\"print\"]",
       "image_id": "ba45d095-af9c-c759-3bcb-4e316f9f613d",
       "alt_text": "A work made of photoetching and color woodblock print."
     },
@@ -535,15 +363,7 @@ export async function seed(knex) {
       "artwork_type_title": "Photograph",
       "artist_id": 42845,
       "artist_title": "Sandy Skoglund",
-      "term_titles": [
-        "silver-dye bleach print",
-        "interiors",
-        "conceptual",
-        "photography",
-        "photographic process",
-        "photography",
-        "photograph"
-      ],
+      "term_titles": "[\"silver-dye bleach print\",\"interiors\",\"conceptual\",\"photography\",\"photographic process\",\"photography\",\"photograph\"]",
       "image_id": "e8fc1a78-2f80-b9dc-2a9d-05896eb5f621",
       "alt_text": "A work made of silver dye-bleach print."
     },
@@ -562,15 +382,7 @@ export async function seed(knex) {
       "artwork_type_title": "Drawing and Watercolor",
       "artist_id": 40876,
       "artist_title": "Carle van Loo",
-      "term_titles": [
-        "pastel",
-        "paper (fiber product)",
-        "chalk sticks",
-        "pastels (crayons)",
-        "crayons",
-        "drawings (visual works)",
-        "prints and drawing"
-      ],
+      "term_titles": "[\"pastel\",\"paper (fiber product)\",\"chalk sticks\",\"pastels (crayons)\",\"crayons\",\"drawings (visual works)\",\"prints and drawing\"]",
       "image_id": "1ca72da2-ab67-dbee-a0c6-8e7a04f2b6c5",
       "alt_text": "A work made of pastel, with touches of black crayon and red chalk, on blue laid paper, laid down on blue wove paper, laid down on cream wove paper."
     },
@@ -589,13 +401,7 @@ export async function seed(knex) {
       "artwork_type_title": "Print",
       "artist_id": 21542,
       "artist_title": "Iwami Reika",
-      "term_titles": [
-        "woodblock print",
-        "paper (fiber product)",
-        "Japanese (culture or style)",
-        "print",
-        "woodblock"
-      ],
+      "term_titles": "[\"woodblock print\",\"paper (fiber product)\",\"Japanese (culture or style)\",\"print\",\"woodblock\"]",
       "image_id": "e3735f3b-0f1b-d0bf-7f1a-85eb0ca58f03",
       "alt_text": "A work made of woodblock print with gold foil."
     },
@@ -614,12 +420,7 @@ export async function seed(knex) {
       "artwork_type_title": "Print",
       "artist_id": 8741,
       "artist_title": "Helen Frankenthaler",
-      "term_titles": [
-        "woodcut",
-        "paper (fiber product)",
-        "print",
-        "prints and drawing"
-      ],
+      "term_titles": "[\"woodcut\",\"paper (fiber product)\",\"print\",\"prints and drawing\"]",
       "image_id": "74a954d1-46a5-dee8-c642-d18381ab0764",
       "alt_text": "A work made of color woodcut from eight lauan mahogany plywood blocks on buff laminated nepalese paper."
     },
@@ -638,12 +439,7 @@ export async function seed(knex) {
       "artwork_type_title": "Print",
       "artist_id": 34119,
       "artist_title": "Charles William Dahlgreen",
-      "term_titles": [
-        "etching",
-        "paper (fiber product)",
-        "print",
-        "prints and drawing"
-      ],
+      "term_titles": "[\"etching\",\"paper (fiber product)\",\"print\",\"prints and drawing\"]",
       "image_id": "cb1ad1f4-3fca-1f95-22d4-f2c111e38bc8",
       "alt_text": "A work made of etching on paper."
     },
@@ -662,13 +458,7 @@ export async function seed(knex) {
       "artwork_type_title": "Print",
       "artist_id": 35522,
       "artist_title": "David Lucas",
-      "term_titles": [
-        "mezzotint",
-        "landscapes",
-        "paper (fiber product)",
-        "print",
-        "prints and drawing"
-      ],
+      "term_titles": "[\"mezzotint\",\"landscapes\",\"paper (fiber product)\",\"print\",\"prints and drawing\"]",
       "image_id": "54c8b002-99a8-a416-f4e7-a0126e1e5c98",
       "alt_text": "A work made of mezzotint with etching, in black, on cream wove paper."
     },
@@ -687,13 +477,7 @@ export async function seed(knex) {
       "artwork_type_title": "Print",
       "artist_id": 44665,
       "artist_title": "Wolf Traut",
-      "term_titles": [
-        "woodcut",
-        "paper (fiber product)",
-        "woodcut (process)",
-        "print",
-        "prints and drawing"
-      ],
+      "term_titles": "[\"woodcut\",\"paper (fiber product)\",\"woodcut (process)\",\"print\",\"prints and drawing\"]",
       "image_id": "45944c93-e51d-dd15-7853-4a99717d0e51",
       "alt_text": "A work made of woodcut in black on ivory laid paper."
     },
@@ -712,12 +496,7 @@ export async function seed(knex) {
       "artwork_type_title": "Print",
       "artist_id": 37116,
       "artist_title": "Israhel van Meckenem, the younger",
-      "term_titles": [
-        "engraving",
-        "paper (fiber product)",
-        "print",
-        "prints and drawing"
-      ],
+      "term_titles": "[\"engraving\",\"paper (fiber product)\",\"print\",\"prints and drawing\"]",
       "image_id": "f36ba797-0ff1-d6dc-8744-2f54888dbc89",
       "alt_text": "A work made of engraving in black on cream laid paper."
     },
@@ -736,14 +515,7 @@ export async function seed(knex) {
       "artwork_type_title": "Print",
       "artist_id": 33550,
       "artist_title": "Gustave Baumann",
-      "term_titles": [
-        "woodcut",
-        "woodcut (process)",
-        "paper (fiber product)",
-        "printing",
-        "print",
-        "prints and drawing"
-      ],
+      "term_titles": "[\"woodcut\",\"woodcut (process)\",\"paper (fiber product)\",\"printing\",\"print\",\"prints and drawing\"]",
       "image_id": "bdf92a5c-ef9c-378f-13c0-dc071fc52614",
       "alt_text": "A work made of color woodcut on tan laid paper."
     },
@@ -762,14 +534,7 @@ export async function seed(knex) {
       "artwork_type_title": "Print",
       "artist_id": 33550,
       "artist_title": "Gustave Baumann",
-      "term_titles": [
-        "woodcut",
-        "woodcut (process)",
-        "paper (fiber product)",
-        "printing",
-        "print",
-        "prints and drawing"
-      ],
+      "term_titles": "[\"woodcut\",\"woodcut (process)\",\"paper (fiber product)\",\"printing\",\"print\",\"prints and drawing\"]",
       "image_id": "9f004f54-4456-1803-b668-0512850676a1",
       "alt_text": "A work made of color woodcut on cream laid paper."
     },
@@ -788,12 +553,7 @@ export async function seed(knex) {
       "artwork_type_title": "Print",
       "artist_id": 33550,
       "artist_title": "Gustave Baumann",
-      "term_titles": [
-        "woodcut",
-        "paper (fiber product)",
-        "print",
-        "prints and drawing"
-      ],
+      "term_titles": "[\"woodcut\",\"paper (fiber product)\",\"print\",\"prints and drawing\"]",
       "image_id": "febdde64-f4a7-02a4-fab2-ca47fd75455b",
       "alt_text": "A work made of color woodcut on cream laid paper."
     },
@@ -812,12 +572,7 @@ export async function seed(knex) {
       "artwork_type_title": "Print",
       "artist_id": 33550,
       "artist_title": "Gustave Baumann",
-      "term_titles": [
-        "woodcut",
-        "paper (fiber product)",
-        "print",
-        "prints and drawing"
-      ],
+      "term_titles": "[\"woodcut\",\"paper (fiber product)\",\"print\",\"prints and drawing\"]",
       "image_id": "9f1798a9-ddfe-4357-f1d0-376ef3bcc875",
       "alt_text": "A work made of color woodcut on cream wove paper, tipped at top two corners onto cream laid paper."
     },
@@ -836,19 +591,7 @@ export async function seed(knex) {
       "artwork_type_title": "Textile",
       "artist_id": 81503,
       "artist_title": "Paracas Necropolis",
-      "term_titles": [
-        "paracas necropolis",
-        "textile",
-        "needlework (visual works)",
-        "early intermediate period",
-        "paracas",
-        "early horizon",
-        "Pre-Columbian",
-        "americas",
-        "peruvian",
-        "andean",
-        "andes"
-      ],
+      "term_titles": "[\"paracas necropolis\",\"textile\",\"needlework (visual works)\",\"early intermediate period\",\"paracas\",\"early horizon\",\"Pre-Columbian\",\"americas\",\"peruvian\",\"andean\",\"andes\"]",
       "image_id": "9db119da-ded6-a3d7-ea54-61fa60fe8a8d",
       "alt_text": "A work."
     },
@@ -867,17 +610,7 @@ export async function seed(knex) {
       "artwork_type_title": "Drawing and Watercolor",
       "artist_id": 34778,
       "artist_title": "Constantin Guys",
-      "term_titles": [
-        "watercolor",
-        "paper (fiber product)",
-        "ink",
-        "coating (material)",
-        "watercolor",
-        "water-base paint",
-        "paint",
-        "drawings (visual works)",
-        "prints and drawing"
-      ],
+      "term_titles": "[\"watercolor\",\"paper (fiber product)\",\"ink\",\"coating (material)\",\"watercolor\",\"water-base paint\",\"paint\",\"drawings (visual works)\",\"prints and drawing\"]",
       "image_id": "69c4fcd7-5553-2e13-a65f-da26ba84766d",
       "alt_text": "A work made of pen and brown ink with brush and watercolor, on ivory wove paper."
     },
@@ -896,12 +629,7 @@ export async function seed(knex) {
       "artwork_type_title": "Print",
       "artist_id": 41233,
       "artist_title": "Esaias van den Velde, I",
-      "term_titles": [
-        "engraving",
-        "paper (fiber product)",
-        "print",
-        "prints and drawing"
-      ],
+      "term_titles": "[\"engraving\",\"paper (fiber product)\",\"print\",\"prints and drawing\"]",
       "image_id": "e14623bd-226c-3486-6334-337e74664307",
       "alt_text": "A work made of engraving in black on ivory laid paper."
     },
@@ -920,12 +648,7 @@ export async function seed(knex) {
       "artwork_type_title": "Print",
       "artist_id": 40516,
       "artist_title": "Charles François Daubigny",
-      "term_titles": [
-        "etching",
-        "paper (fiber product)",
-        "print",
-        "prints and drawing"
-      ],
+      "term_titles": "[\"etching\",\"paper (fiber product)\",\"print\",\"prints and drawing\"]",
       "image_id": "c9fa40c5-b0b4-37d0-2848-7b5fc9d3076e",
       "alt_text": "A work made of etching on ivory wove paper."
     },
@@ -944,30 +667,7 @@ export async function seed(knex) {
       "artwork_type_title": "Painting",
       "artist_id": 105100,
       "artist_title": "Ghasi",
-      "term_titles": [
-        "miniature painting",
-        "paper (fiber product)",
-        "painting (image making)",
-        "royal personages",
-        "South Asian",
-        "gold",
-        "watercolor",
-        "painting",
-        "asian art",
-        "tattoos",
-        "swords",
-        "smoking",
-        "men",
-        "jewelry",
-        "falcons",
-        "cheetahs",
-        "Indian (South Asian)",
-        "weapons",
-        "Rana",
-        "leopards",
-        "horses",
-        "animals"
-      ],
+      "term_titles": "[\"miniature painting\",\"paper (fiber product)\",\"painting (image making)\",\"royal personages\",\"South Asian\",\"gold\",\"watercolor\",\"painting\",\"asian art\",\"tattoos\",\"swords\",\"smoking\",\"men\",\"jewelry\",\"falcons\",\"cheetahs\",\"Indian (South Asian)\",\"weapons\",\"Rana\",\"leopards\",\"horses\",\"animals\"]",
       "image_id": "9f08b895-4960-4bc6-5871-dc9bfab4c655",
       "alt_text": "Watercolor of man with golden halo on horse, green background."
     },
@@ -986,13 +686,7 @@ export async function seed(knex) {
       "artwork_type_title": "Photograph",
       "artist_id": 25264,
       "artist_title": "Frank Meadow Sutcliffe",
-      "term_titles": [
-        "photogravure",
-        "19th century",
-        "photomechanical process",
-        "photography",
-        "photograph"
-      ],
+      "term_titles": "[\"photogravure\",\"19th century\",\"photomechanical process\",\"photography\",\"photograph\"]",
       "image_id": "3e2d5401-00fc-9536-3756-15256007d78b",
       "alt_text": "A work made of photogravure, from \"sun artists, number 8\" (1891)."
     },
@@ -1011,12 +705,7 @@ export async function seed(knex) {
       "artwork_type_title": "Photograph",
       "artist_id": 25264,
       "artist_title": "Frank Meadow Sutcliffe",
-      "term_titles": [
-        "photogravure",
-        "photomechanical process",
-        "photography",
-        "photograph"
-      ],
+      "term_titles": "[\"photogravure\",\"photomechanical process\",\"photography\",\"photograph\"]",
       "image_id": "5b55ec27-7cd3-d080-74e4-c8be9fad6104",
       "alt_text": "A work made of photogravure, from \"sun artists, number 8\" (1891)."
     },
@@ -1035,18 +724,7 @@ export async function seed(knex) {
       "artwork_type_title": "Painting",
       "artist_id": 36133,
       "artist_title": "Joseph Parker",
-      "term_titles": [
-        "painting",
-        "sunrises",
-        "modern and contemporary art",
-        "trees",
-        "plants",
-        "coastal scenes",
-        "landscapes",
-        "columns",
-        "geometric",
-        "clouds"
-      ],
+      "term_titles": "[\"painting\",\"sunrises\",\"modern and contemporary art\",\"trees\",\"plants\",\"coastal scenes\",\"landscapes\",\"columns\",\"geometric\",\"clouds\"]",
       "image_id": "44113804-ce2c-a0e8-786f-319ba4474a28",
       "alt_text": "A work made of acrylic on canvas."
     },
@@ -1065,14 +743,7 @@ export async function seed(knex) {
       "artwork_type_title": "Drawing and Watercolor",
       "artist_id": 13340,
       "artist_title": "Wolf Kahn",
-      "term_titles": [
-        "pastel",
-        "paper (fiber product)",
-        "pastels (crayons)",
-        "crayons",
-        "drawings (visual works)",
-        "prints and drawing"
-      ],
+      "term_titles": "[\"pastel\",\"paper (fiber product)\",\"pastels (crayons)\",\"crayons\",\"drawings (visual works)\",\"prints and drawing\"]",
       "image_id": "e1798e33-9bd6-b8e4-0903-df46eec7fbee",
       "alt_text": "A work made of pastel on white wove paper."
     },
@@ -1091,12 +762,7 @@ export async function seed(knex) {
       "artwork_type_title": "Print",
       "artist_id": 24506,
       "artist_title": "Thomas George Soper",
-      "term_titles": [
-        "drypoint",
-        "paper (fiber product)",
-        "print",
-        "prints and drawing"
-      ],
+      "term_titles": "[\"drypoint\",\"paper (fiber product)\",\"print\",\"prints and drawing\"]",
       "image_id": "b2c996e3-d3d1-4e9c-dd25-f615a3fd60f4",
       "alt_text": "A work made of drypoint on cream laid paper."
     },
@@ -1115,18 +781,7 @@ export async function seed(knex) {
       "artwork_type_title": "Drawing and Watercolor",
       "artist_id": 40945,
       "artist_title": "William James Muller",
-      "term_titles": [
-        "watercolor",
-        "paper (fiber product)",
-        "ink",
-        "watercolor",
-        "water-base paint",
-        "paint",
-        "gouache",
-        "graphite",
-        "drawings (visual works)",
-        "prints and drawing"
-      ],
+      "term_titles": "[\"watercolor\",\"paper (fiber product)\",\"ink\",\"watercolor\",\"water-base paint\",\"paint\",\"gouache\",\"graphite\",\"drawings (visual works)\",\"prints and drawing\"]",
       "image_id": "124ca698-69ee-32da-64f0-d75b963d27bf",
       "alt_text": "A work made of pen and brown ink with brush and watercolor and gouache, over graphite, on gray wove paper, laid down on board."
     },
@@ -1145,13 +800,7 @@ export async function seed(knex) {
       "artwork_type_title": "Print",
       "artist_id": 42559,
       "artist_title": "Wolf Vostell",
-      "term_titles": [
-        "screen printing",
-        "screenprint",
-        "paper (fiber product)",
-        "print",
-        "prints and drawing"
-      ],
+      "term_titles": "[\"screen printing\",\"screenprint\",\"paper (fiber product)\",\"print\",\"prints and drawing\"]",
       "image_id": "072fc0c3-d7e1-4c60-1404-1310ca431a55",
       "alt_text": "A work made of screenprint, flocked with glitter on white wove paper."
     },
@@ -1170,12 +819,7 @@ export async function seed(knex) {
       "artwork_type_title": "Print",
       "artist_id": 35821,
       "artist_title": "Thomas Moran",
-      "term_titles": [
-        "etching",
-        "paper (fiber product)",
-        "print",
-        "prints and drawing"
-      ],
+      "term_titles": "[\"etching\",\"paper (fiber product)\",\"print\",\"prints and drawing\"]",
       "image_id": "4561920d-c110-897f-9822-db1177227526",
       "alt_text": "A work made of etching on cream laid paper."
     },
@@ -1194,7 +838,7 @@ export async function seed(knex) {
       "artwork_type_title": "Print",
       "artist_id": 11519,
       "artist_title": "Horii Hideo",
-      "term_titles": [],
+      "term_titles": "[]",
       "image_id": "1466ba88-0b34-30bf-25ad-0bfddfc7ef0f",
       "alt_text": "A work made of copper print on paper."
     },
@@ -1213,7 +857,7 @@ export async function seed(knex) {
       "artwork_type_title": "Print",
       "artist_id": 116770,
       "artist_title": "Furutani Hiroko",
-      "term_titles": [],
+      "term_titles": "[]",
       "image_id": "b8324319-6237-272c-3ec3-c5be155f98b9",
       "alt_text": "A work."
     },
@@ -1232,16 +876,7 @@ export async function seed(knex) {
       "artwork_type_title": "Photograph",
       "artist_id": 28036,
       "artist_title": "Carleton Watkins",
-      "term_titles": [
-        "albumen silver print",
-        "traditional landscapes",
-        "19th century",
-        "photography",
-        "photographic process",
-        "photography",
-        "landscapes",
-        "photograph"
-      ],
+      "term_titles": "[\"albumen silver print\",\"traditional landscapes\",\"19th century\",\"photography\",\"photographic process\",\"photography\",\"landscapes\",\"photograph\"]",
       "image_id": "09b6a369-8934-7a4d-0370-90509dde6607",
       "alt_text": "A work made of albumen print."
     },
@@ -1260,12 +895,7 @@ export async function seed(knex) {
       "artwork_type_title": "Textile",
       "artist_id": 20421,
       "artist_title": "Petitpierre et Cie.",
-      "term_titles": [
-        "copperplate printing",
-        "textile",
-        "weaving - printed",
-        "furnishing textile"
-      ],
+      "term_titles": "[\"copperplate printing\",\"textile\",\"weaving - printed\",\"furnishing textile\"]",
       "image_id": "af20d1a4-3a98-4bbf-8e6c-4a1719a9b601",
       "alt_text": "A work made of cotton, plain weave; copperplate printed."
     },
@@ -1284,11 +914,7 @@ export async function seed(knex) {
       "artwork_type_title": "Textile",
       "artist_id": 30442,
       "artist_title": "Anita Askild",
-      "term_titles": [
-        "textile",
-        "weaving - printed",
-        "furnishing textile"
-      ],
+      "term_titles": "[\"textile\",\"weaving - printed\",\"furnishing textile\"]",
       "image_id": "5667e1a9-ab58-8678-022b-ea9d0e2555bd",
       "alt_text": "A work made of cotton, plain weave with supplementary pile warps forming cut, solid velvet; screen printed."
     },
@@ -1307,12 +933,7 @@ export async function seed(knex) {
       "artwork_type_title": "Textile",
       "artist_id": 20421,
       "artist_title": "Petitpierre et Cie.",
-      "term_titles": [
-        "copperplate printing",
-        "textile",
-        "weaving - printed",
-        "furnishing textile"
-      ],
+      "term_titles": "[\"copperplate printing\",\"textile\",\"weaving - printed\",\"furnishing textile\"]",
       "image_id": "4a3e86a1-61db-1e5c-5599-5cd9f432952a",
       "alt_text": "A work made of cotton, plain weave; copperplate printed."
     },
@@ -1331,15 +952,7 @@ export async function seed(knex) {
       "artwork_type_title": "Photograph",
       "artist_id": 111746,
       "artist_title": "Tibor Hajas",
-      "term_titles": [
-        "photograph",
-        "Paris",
-        "black-and-white photography",
-        "photography",
-        "photographic processes",
-        "photographic techniques",
-        "photography"
-      ],
+      "term_titles": "[\"photograph\",\"Paris\",\"black-and-white photography\",\"photography\",\"photographic processes\",\"photographic techniques\",\"photography\"]",
       "image_id": "60544248-67b7-5e7b-ffcf-52b35cf3cd0c",
       "alt_text": "A work made of gelatin silver prints (7)."
     }

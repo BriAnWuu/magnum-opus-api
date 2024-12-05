@@ -2,6 +2,7 @@ import cors from 'cors';
 import 'dotenv/config';
 import express from 'express';
 import artworksRoutes from './routes/artworks.js';
+import auctionRoutes from './routes/auction.js';
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -12,7 +13,7 @@ app.use(express.static('public'));
 
 
 app.use("/api/artworks", artworksRoutes);
-// app.use("/api/auction", auctionRoutes);
+app.use("/api/auction", auctionRoutes);
 // app.use("/api/bid", bidRoutes);
 // app.use("/api/user", userRoutes);
 

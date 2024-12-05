@@ -5,7 +5,16 @@ const knex = initKnex(configuration);
 const get = async (req, res) => {
     try {
         const auction = await knex("auction")
-            .select()
+            .select(
+                "id",
+                "artwork_id",
+                "owner_id",
+                "open_at",
+                "close_at",
+                "ask_price",
+                "leading_bid_price",
+                "watchers"
+            )
             .where({ artwork_id: req.params.artworkId })
             .first();
         

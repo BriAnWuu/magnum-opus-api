@@ -8,6 +8,7 @@ export function up(knex) {
         table.boolean("buyer").notNullable();
         table.boolean("seller").notNullable();
         table.boolean("artist").notNullable();
+        table.string("watching").defaultTo("[]");
         table.timestamp("created_at").defaultTo(knex.fn.now());
     })
     .createTable("auction", (table) => {
@@ -24,10 +25,11 @@ export function up(knex) {
             .references("user.id")
             .onUpdate("CASCADE")
             .onDelete("RESTRICT");
-        table.timestamp("open_at").notNullable();
-        table.timestamp("close_at").notNullable();
+        table.bigInteger("open_at").unsigned().notNullable();
+        table.bigInteger("close_at").unsigned().notNullable();
         table.integer("ask_price").unsigned().notNullable();
-        table.integer("leading_bid_price").unsigned();
+        table.string("leading_bid_price").notNullable();
+        table.string("watchers").notNullable();
         table.timestamp('created_at').defaultTo(knex.fn.now());
     })
     .createTable("bid", (table) => {

@@ -23,13 +23,14 @@ const getAll = async (req, res) => {
                 "alt_text",
                 "open_at",
                 "close_at",
+                "ask_price",
                 "leading_bid_price"
             ];
 
             artworks = await knex("artwork")
                 .join("auction", "artwork.id", "=", "auction.artwork_id")
                 .select(fields)
-                .offset(21)
+                .offset(2)
                 .limit(17);
             
             artworks.forEach((artwork) => {

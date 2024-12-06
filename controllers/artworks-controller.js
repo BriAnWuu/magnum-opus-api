@@ -30,7 +30,7 @@ const getAll = async (req, res) => {
             artworks = await knex("artwork")
                 .join("auction", "artwork.id", "=", "auction.artwork_id")
                 .select(fields)
-                .offset(2)
+                .offset(29)
                 .limit(17);
             
             artworks.forEach((artwork) => {

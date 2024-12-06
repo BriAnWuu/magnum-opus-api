@@ -3,19 +3,51 @@ import configuration from "../knexfile.js";
 const knex = initKnex(configuration);
 
 
-
-
 const getAll = async (req, res) => {
     try {
-        const artworks = await knex("artwork")
-            .select(
+        let fields = [];
+        let artworks;
+
+        if (req.query.q === "main") {
+            fields = [
+                "artwork.id",
+                "title",
+                "date_start",
+                "date_end",
+                "artist_display",
+                "place_of_origin",
+                "description",
+                "dimensions",
+                "medium_display",
+                "credit_line",
+                "alt_text",
+                "open_at",
+                "close_at",
+                "leading_bid_price"
+            ];
+
+            artworks = await knex("artwork")
+                .join("auction", "artwork.id", "=", "auction.artwork_id")
+                .select(fields)
+                .offset(21)
+                .limit(17);
+            
+            artworks.forEach((artwork) => {
+                artwork.leading_bid_price = JSON.parse(artwork.leading_bid_price);
+            });
+
+        } else {
+            fields = [
                 "id",
                 "title",
                 "date_end",
                 "artist_title",
-                "image_id",
                 "alt_text"
-            );
+            ];
+
+            artworks = await knex("artwork").select(fields);
+        }
+
         
         res.status(200).json(artworks);
     } catch (error) {

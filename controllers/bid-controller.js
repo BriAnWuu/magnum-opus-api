@@ -1,9 +1,10 @@
 import initKnex from "knex";
 import configuration from "../knexfile.js";
+import { update } from "./user-controller.js";
 const knex = initKnex(configuration);
 
 const reqBodyValid = (body) => {
-    if (!body.auction_id || !body.user_id || !body.amount) {
+    if (!body.auction_id || !body.user_id || !body.amount || !body.buyer || !body.watching) {
         return false;
     }
     return true;
@@ -42,14 +43,38 @@ const postBid = async (req, res) => {
             })
         }
 
+        // retrieve user profile
+        const user = findUser[0];
+        // check if update watch list is needed
+        user.watching = JSON.parse(user.watching);
+        if (!user.watching.includes(req.body.watching)) {
+            user.watching.push(req.body.watching);
+        }
+        user.watching = JSON.stringify(user.watching);
+        // clean data entry for update
+        const updateUser = { 
+            ...user,
+            buyer: req.body.buyer,
+        }
 
-        const [ newBidId ] = await knex("bid").insert(req.body);
+        // update user profile
+        const rowsUpdated = await knex("user")
+            .where({ id: req.body.user_id })
+            .update(updateUser);
+
+        
+        const [ newBidId ] = await knex("bid").insert({
+            auction_id: req.body.auction_id,
+            user_id: req.body.user_id,
+            amount: req.body.amount,
+        });
+        
         const newBid = await knex("bid")
             .select()
             .where({ id: newBidId })
             .first();
 
-        res.status(201).json(newBid);
+        res.status(201).json({...newBid, "users_updated": rowsUpdated});
     } catch (error) {
         res.status(500).json({
             message: `Unable to bid on artwork ${req.body.auction_id}`,

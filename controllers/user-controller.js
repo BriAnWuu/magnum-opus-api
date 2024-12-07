@@ -10,24 +10,33 @@ const reqBodyValid = (body) => {
 }
 
 const update = async (req, res) => {
-    if (!reqBodyValid(req.body)) {
-        return res.status(400).json({
-            message: "Missing properties in request body"
-        });
-    }
+    // if (!reqBodyValid(req.body)) {
+    //     return res.status(400).json({
+    //         message: "Missing properties in request body"
+    //     });
+    // }
 
     try {
-        req.body.watching = JSON.stringify(req.body.watching);
-
-        const rowsUpdated = await knex("user")
-            .where({ id: req.params.id })
-            .update(req.body);
-
-        if (rowsUpdated === 0) {
+        const findUser = await knex("user")
+            .where({ id: req.params.id });
+        
+        if (findUser.length === 0) {
             return res.status(404).json({
                 message: `User ID ${req.params.id} not found`,
             })
         }
+
+        const user = findUser[0];
+        user.watching = JSON.parse(user.watching);
+        if (!user.watching.includes(req.body.watching)) {
+            user.watching.push(req.body.watching);
+        }
+        user.watching = JSON.stringify(user.watching);
+
+
+        const rowsUpdated = await knex("user")
+            .where({ id: req.params.id })
+            .update(user);
 
         const userUpdated = await knex("user")
             .select()

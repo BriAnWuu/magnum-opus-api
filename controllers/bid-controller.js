@@ -1,6 +1,5 @@
 import initKnex from "knex";
 import configuration from "../knexfile.js";
-import { update } from "./user-controller.js";
 const knex = initKnex(configuration);
 
 const reqBodyValid = (body) => {
@@ -27,9 +26,10 @@ const postBid = async (req, res) => {
         }
 
         // Check amount valid
-        findAuction[0].leading_bid_price = JSON.parse(findAuction[0].leading_bid_price);
-        const bidLen = findAuction[0].leading_bid_price.length - 1;
-        if (findAuction[0].leading_bid_price[bidLen] >= req.body.amount) {
+        const auction = findAuction[0]
+        auction.leading_bid_price = JSON.parse(auction.leading_bid_price);
+        const bidLen = auction.leading_bid_price.length - 1;
+        if (auction.leading_bid_price[bidLen] >= req.body.amount) {
             return res.status(400).json({
                 message: `New bid has to be higher than current price`
             })
@@ -62,19 +62,30 @@ const postBid = async (req, res) => {
             .where({ id: req.body.user_id })
             .update(updateUser);
 
+
+        // update auction data
+        auction.leading_bid_price.push(req.body.amount);
+        auction.leading_bid_price = JSON.stringify(auction.leading_bid_price);
+        const auctionRowsUpdated = await knex("auction")
+            .where({ id: req.body.auction_id })
+            .update(auction);
+        
         
         const [ newBidId ] = await knex("bid").insert({
             auction_id: req.body.auction_id,
             user_id: req.body.user_id,
             amount: req.body.amount,
         });
-        
         const newBid = await knex("bid")
             .select()
             .where({ id: newBidId })
             .first();
 
-        res.status(201).json({...newBid, "users_updated": rowsUpdated});
+        res.status(201).json({
+            ...newBid, 
+            "users_updated": rowsUpdated,
+            "auction_updated": auctionRowsUpdated,
+        });
     } catch (error) {
         res.status(500).json({
             message: `Unable to bid on artwork ${req.body.auction_id}`,

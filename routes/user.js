@@ -5,6 +5,6 @@ const router = express.Router();
 
 router
     .route("/:id")
-    .patch(userController.update);
+    .patch(userController.follow);
 
 export default router;

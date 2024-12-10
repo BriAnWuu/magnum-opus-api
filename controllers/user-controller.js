@@ -9,7 +9,7 @@ const reqBodyValid = (body) => {
     return true;
 }
 
-const update = async (req, res) => {
+const follow = async (req, res) => {
     // if (!reqBodyValid(req.body)) {
     //     return res.status(400).json({
     //         message: "Missing properties in request body"
@@ -33,7 +33,18 @@ const update = async (req, res) => {
         }
         user.watching = JSON.stringify(user.watching);
 
+        // find and update auction
+        const findAuction = await knex("auction")
+            .where({ id: req.body.watching })
+            .first();
 
+        findAuction.watchers = JSON.parse(findAuction.watchers);
+        if (!findAuction.watchers.includes(req.params.id)) {
+            findAuction.watchers.push(req.params.id);
+        }
+        findAuction.watchers = JSON.stringify(findAuction.watchers);
+
+        // update user
         const rowsUpdated = await knex("user")
             .where({ id: req.params.id })
             .update(user);
@@ -43,9 +54,14 @@ const update = async (req, res) => {
             .where({ id: req.params.id })
             .first();
 
+        // update auction
+        const rowsAuctionUpdated = await knex("auction")
+            .where({ id: req.body.watching })
+            .update(findAuction);
+
         userUpdated.watching = JSON.parse(userUpdated.watching);
 
-        res.status(200).json(userUpdated);
+        res.status(200).json({...userUpdated, auction_updated: rowsAuctionUpdated});
 
     } catch (error) {
         res.status(500).json({
@@ -57,6 +73,6 @@ const update = async (req, res) => {
 
 
 export {
-    update
+    follow
 };
 

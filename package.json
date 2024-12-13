@@ -5,7 +5,11 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node --watch index.js"
+    "dev": "node --watch index.js",
+    "migrate": "knex migrate:latest",
+    "seed": "knex seed:run",
+    "migrate:rollback": "knex migrate:rollback",
+    "migrate:down": "knex migrate:down"
   },
   "keywords": [],
   "author": "Brian Wu",
@@ -14,6 +18,8 @@
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
-    "express": "^4.21.1"
+    "express": "^4.21.1",
+    "knex": "^3.1.0",
+    "mysql2": "^3.11.5"
   }
 }

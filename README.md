@@ -68,6 +68,7 @@ npm run dev
 
 Be sure that front end app is also running in your browser.
 
+---
 
 ## Overview
 

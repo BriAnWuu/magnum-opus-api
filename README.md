@@ -32,7 +32,7 @@ DB_PASSWORD=<YOUR_DB_USER_PASSWORD>
 
 Set up database locally using your credentials above. More resource on MySQL can be found [here](https://www.mysql.com/)
 
-### Populate Database
+### Populate Database with Mock Data
 
 Under your project folder, run commands in terminal:
 
@@ -41,9 +41,9 @@ npm run migrate
 npm run seed
 ```
 
-#### Trouble Shooting Database
+### Trouble Shooting Database
 
-To reset the data in your database, run:
+Because my database has very strict deleting and updating rules, in order to reset the data in your database, run:
 
 ```shell
 npm run migrate:rollback
@@ -51,7 +51,12 @@ npm run migrate
 npm run seed
 ```
 
+Simply run `seed` will be denied.
+
 There will be time when you want to regenerate random timestamp data for `open` and `close`, I found [FakerJS Date](https://fakerjs.dev/api/date.html#betweens) very useful.
+
+UPDATES:
+- 2024 Dec 14: `npm run seed` now incorporates random dates generation, details can be found in `/data`, `/utils`, and `/seeds` folders.
 
 ### Launch the Application
 
@@ -63,6 +68,7 @@ npm run dev
 
 Be sure that front end app is also running in your browser.
 
+---
 
 ## Overview
 

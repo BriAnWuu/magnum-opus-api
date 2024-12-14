@@ -41,7 +41,7 @@ npm run migrate
 npm run seed
 ```
 
-#### Trouble Shooting Database
+### Trouble Shooting Database
 
 Because my database has very strict deleting and updating rules, in order to reset the data in your database, run:
 
@@ -56,7 +56,7 @@ Simply run `seed` will be denied.
 There will be time when you want to regenerate random timestamp data for `open` and `close`, I found [FakerJS Date](https://fakerjs.dev/api/date.html#betweens) very useful.
 
 UPDATES:
-- 2024 Dec 14: `npm run seed` now incorporates random dates generation, details can be found in `/data`, `/utils`, and `seeds` folders.
+- 2024 Dec 14: `npm run seed` now incorporates random dates generation, details can be found in `/data`, `/utils`, and `/seeds` folders.
 
 ### Launch the Application
 

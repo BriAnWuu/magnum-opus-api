@@ -116,6 +116,7 @@ Compared to traditional auctions, an art auction platform breaks geographical ba
     - react-text-mask
     - react-use-measure
     - sass
+    - socket.io-client
 - Server libraries:
     - cors
     - dotenv

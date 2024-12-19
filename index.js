@@ -4,7 +4,7 @@ import express from 'express';
 
 import { createServer } from 'http';
 import { Server } from 'socket.io';
-// import  from './controllers/socket-controller.js';
+import socketOnConnect from './controllers/socket-controller.js';
 
 import artworksRoutes from './routes/artworks.js';
 import auctionRoutes from './routes/auction.js';
@@ -13,21 +13,18 @@ import userRoutes from './routes/user.js';
 
 const PORT = process.env.PORT || 8080;
 const CLIENT_PORT = process.env.CLIENT_PORT || 5173;
+const corsOptions = { origin: `http://localhost:${CLIENT_PORT}` }
 
 
 const app = express();
 
-
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
-    cors: {
-        origin: `http://localhost:${CLIENT_PORT}`,
-        // methods: ["GET", "POST"]
-    }
+    cors: corsOptions
 });
 
 
-app.use(cors({origin: `http://localhost:${CLIENT_PORT}`}));
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.static('public'));
 
@@ -38,24 +35,9 @@ app.use("/api/bid", bidRoutes);
 app.use("/api/user", userRoutes);
 
 
-// io.on("connection", (socket) => socketOnConnect(socket));
-io.on("connection", (socket) => {
-    console.log("user connected", socket.id);
-
-    setTimeout(() => {
-        io.emit('test_broadcast', { message: "testing" });
-    }, 10000);
-
-    socket.on("disconnect", () => {
-        console.log("User disconnected", socket.id);
-    })
-});
+socketOnConnect(io);
 
 
 httpServer.listen(PORT, () => {
-    console.log(`Running Magnum Opus API on http://localhost:${PORT}...`);
+    console.log(`Running Magnum Opus API on http://localhost:${PORT}...\n`);
 });
-
-// app.listen(PORT, () => {
-    // console.log(`Running Magnum Opus API on http://localhost:${PORT}...`);
-// });

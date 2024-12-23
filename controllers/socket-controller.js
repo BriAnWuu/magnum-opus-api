@@ -15,10 +15,6 @@ const removeUser = (socketId) => {
     );
 }
 
-const getUser = (userId) => {
-    return connectedUsers.find((user) => user.userId === userId);
-}
-
 const getWatcherList = async (auctionId) => {
     const knex = initKnex(configuration);
     try {
@@ -37,11 +33,12 @@ const getWatcherList = async (auctionId) => {
     }
 }
 
-const newBidBroadcast = async (io, socket, auctionId) => {
+const newBidBroadcast = async (socket, auctionId) => {
     try {
         const auction = await getWatcherList(auctionId);
 
         // match watchers and connected sockets
+        // one user can have multiple session (or devices) online
         auction.watchers.forEach((watcherId) => {
             connectedUsers.filter(user =>
                 user.userId === watcherId
@@ -55,13 +52,14 @@ const newBidBroadcast = async (io, socket, auctionId) => {
 
     } catch (error) {
         console.error(error);
-        io.emit("newBidBroadcast", { 
+        socket.emit("newBidBroadcast", { 
             success: false, 
             error: "Failed to get watchers" 
         });
     }
 }
 
+// main socket controller
 const socketOnConnect = (io) => {
     io.on("connection", (socket) => {
         console.log(`User connected ${socket.id}`)
@@ -72,8 +70,8 @@ const socketOnConnect = (io) => {
         });
 
         socket.on("onNewBid", (auctionId) => {
-            // console.log("new bid!!")
-            newBidBroadcast(io, socket, auctionId)
+            console.log("new bid!!")
+            newBidBroadcast(socket, auctionId)
         });
 
         socket.on("disconnect", () => {

@@ -15,11 +15,12 @@ const removeUser = (socketId) => {
     );
 }
 
-const getWatcherList = async (auctionId) => {
+const getAuction = async (auctionId) => {
     const knex = initKnex(configuration);
     try {
         const auction = await knex("auction")
-            .select("id", "watchers")
+            .join("artwork", "auction.artwork_id", "=", "artwork.id")
+            .select("auction.id", "watchers", "leading_bid_price", "title")
             .where({ id: auctionId })
             .first();
 
@@ -35,7 +36,7 @@ const getWatcherList = async (auctionId) => {
 
 const newBidBroadcast = async (socket, auctionId) => {
     try {
-        const auction = await getWatcherList(auctionId);
+        const auction = await getAuction(auctionId);
 
         // match watchers and connected sockets
         // one user can have multiple session (or devices) online
@@ -70,7 +71,6 @@ const socketOnConnect = (io) => {
         });
 
         socket.on("onNewBid", (auctionId) => {
-            console.log("new bid!!")
             newBidBroadcast(socket, auctionId)
         });
 

@@ -39,8 +39,8 @@ const follow = async (req, res) => {
             .first();
 
         findAuction.watchers = JSON.parse(findAuction.watchers);
-        if (!findAuction.watchers.includes(req.params.id)) {
-            findAuction.watchers.push(req.params.id);
+        if (!findAuction.watchers.includes(+req.params.id)) {
+            findAuction.watchers.push(+req.params.id);
         }
         findAuction.watchers = JSON.stringify(findAuction.watchers);
 

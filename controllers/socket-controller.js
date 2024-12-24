@@ -15,16 +15,23 @@ const removeUser = (socketId) => {
     );
 }
 
+const findUser = (socketId) => {
+    return connectedUsers.find((user) => 
+        user.socketId === socketId
+    ).userId;
+}
+
 const getAuction = async (auctionId) => {
     const knex = initKnex(configuration);
     try {
         const auction = await knex("auction")
             .join("artwork", "auction.artwork_id", "=", "artwork.id")
             .select("auction.id", "watchers", "leading_bid_price", "title")
-            .where({ id: auctionId })
+            .where("auction.id", auctionId)
             .first();
 
         auction.watchers = JSON.parse(auction.watchers);
+        auction.leading_bid_price = JSON.parse(auction.leading_bid_price);
 
         return auction
 
@@ -63,7 +70,6 @@ const newBidBroadcast = async (socket, auctionId) => {
 // main socket controller
 const socketOnConnect = (io) => {
     io.on("connection", (socket) => {
-        console.log(`User connected ${socket.id}`)
         
         socket.on("addNewUser", (userId) => {
             addUser(userId, socket.id);
@@ -75,6 +81,7 @@ const socketOnConnect = (io) => {
         });
 
         socket.on("disconnect", () => {
+            console.log(`User ${findUser(socket.id)} has disconnected`);
             removeUser(socket.id);
             console.log(connectedUsers);
         });

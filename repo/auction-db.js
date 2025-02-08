@@ -2,7 +2,7 @@ import initKnex from "knex";
 import configuration from "../knexfile.js";
 const knex = initKnex(configuration);
 
-export function GetAuction(artworkId) {
+export function GetAuctionByArtwork(artworkId) {
     const fields = [
         "auction.id",
         "artwork_id",
@@ -29,4 +29,12 @@ export function GetAuction(artworkId) {
         .select(fields)
         .where({ artwork_id: artworkId })
         .first();
+}
+
+export function GetAuctionById(id) {
+    return knex("auction").select().where({ id: id }).first();
+}
+
+export function UpdateAuction(id, updatedAuction) {
+    return knex("auction").where({ id: id }).update(updatedAuction);
 }

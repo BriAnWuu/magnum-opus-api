@@ -1,9 +1,9 @@
-import { GetAuction } from "../repo/auction-db.js";
+import { GetAuctionByArtwork } from "../repo/auction-db.js";
 import { GetBidsByAuction } from "../repo/bid-db.js";
 
 const get = async (req, res) => {
     try {
-        const auction = await GetAuction(req.params.artworkId);
+        const auction = await GetAuctionByArtwork(req.params.artworkId);
 
         if (!auction) {
             return res.status(404).json({

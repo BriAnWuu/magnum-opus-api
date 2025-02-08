@@ -1,65 +1,39 @@
-import initKnex from "knex";
-import configuration from "../knexfile.js";
-const knex = initKnex(configuration);
+import { GetAuction } from "../repo/auction-db.js";
+import { GetBidsByAuction } from "../repo/bid-db.js";
 
 const get = async (req, res) => {
     try {
-        const auction = await knex("auction")
-            .join("artwork", "auction.artwork_id", "=", "artwork.id")
-            .select(
-                "auction.id",
-                "artwork_id",
-                "owner_id",
-                "open_at",
-                "close_at",
-                "ask_price",
-                "leading_bid_price",
-                "watchers",
-                "title",
-                "date_start",
-                "date_end", 
-                "place_of_origin",
-                "description",
-                "dimensions",
-                "medium_display",
-                "provenance_text",
-                "artist_title",
-                "alt_text"
-            )
-            .where({ artwork_id: req.params.artworkId })
-            .first();
-        
+        const auction = await GetAuction(req.params.artworkId);
+
+        if (!auction) {
+            return res.status(404).json({
+                message: `Auction of artwork ID ${req.params.artworkId} not found`,
+            });
+        }
+
         auction.leading_bid_price = JSON.parse(auction.leading_bid_price);
         auction.watchers = JSON.parse(auction.watchers);
 
         res.status(200).json(auction);
     } catch (error) {
         res.status(500).json({
-            message: `Unable to get auction ${req.params.artworkId}`,
+            message: `Unable to get auction of artwork ID ${req.params.artworkId}`,
             error,
         });
     }
-}
-
+};
 
 const getBids = async (req, res) => {
     try {
-        const bids = await knex("bid")
-            .select()
-            .where({ auction_id: req.params.id });
-        
+        const bids = await GetBidsByAuction(req.params.id);
+
         res.status(200).json(bids);
     } catch (error) {
         res.status(500).json({
-            message: `Unable to get auction ${req.params.id}`,
+            message: `Unable to get bids for auction ID ${req.params.id}`,
             error,
         });
     }
-}
-
-
-export {
-    get,
-    getBids
 };
 
+export { get, getBids };

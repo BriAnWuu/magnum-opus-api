@@ -38,3 +38,11 @@ export function GetAuctionById(id) {
 export function UpdateAuction(id, updatedAuction) {
     return knex("auction").where({ id: id }).update(updatedAuction);
 }
+
+export function GetAuctionSocket(id) {
+    return knex("auction")
+        .join("artwork", "auction.artwork_id", "=", "artwork.id")
+        .select("auction.id", "watchers", "leading_bid_price", "title")
+        .where("auction.id", id)
+        .first();
+}

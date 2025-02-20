@@ -1,13 +1,13 @@
-import { GetAuctionByArtwork } from "../repo/auction-db.js";
+import { GetAuctionByArtwork, GetAuctionById } from "../repo/auction-db.js";
 import { GetBidsByAuction } from "../repo/bid-db.js";
 
-const get = async (req, res) => {
+const getAuctionById = async (req, res) => {
     try {
-        const auction = await GetAuctionByArtwork(req.params.artworkId);
+        const auction = await GetAuctionById(req.params.id);
 
         if (!auction) {
             return res.status(404).json({
-                message: `Auction of artwork ID ${req.params.artworkId} not found`,
+                message: `Auction ID ${req.params.id} does not exist`,
             });
         }
 
@@ -17,7 +17,35 @@ const get = async (req, res) => {
         res.status(200).json(auction);
     } catch (error) {
         res.status(500).json({
-            message: `Unable to get auction of artwork ID ${req.params.artworkId}`,
+            message: `Unable to get auction ID ${req.params.id} due to internal server error`,
+            error,
+        });
+    }
+};
+
+const getAuctionByArtworkId = async (req, res) => {
+    if (!req.query.artworkId) {
+        return res.status(404).json({
+            message: "Query param Artwork ID missing",
+        });
+    }
+
+    try {
+        const auction = await GetAuctionByArtwork(req.query.artworkId);
+
+        if (!auction) {
+            return res.status(404).json({
+                message: `Auction of artwork ID ${req.query.artworkId} not found`,
+            });
+        }
+
+        auction.leading_bid_price = JSON.parse(auction.leading_bid_price);
+        auction.watchers = JSON.parse(auction.watchers);
+
+        res.status(200).json(auction);
+    } catch (error) {
+        res.status(500).json({
+            message: `Unable to get auction of artwork ID ${req.query.artworkId}`,
             error,
         });
     }
@@ -36,4 +64,4 @@ const getBids = async (req, res) => {
     }
 };
 
-export { get, getBids };
+export { getAuctionByArtworkId, getAuctionById, getBids };

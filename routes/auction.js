@@ -5,6 +5,8 @@ const router = express.Router();
 
 router.route("/").get(auctionController.getAuctionByArtworkId);
 
+router.route("/:id").get(auctionController.getAuctionById);
+
 router.route("/:id/bids").get(auctionController.getBids);
 
 export default router;
